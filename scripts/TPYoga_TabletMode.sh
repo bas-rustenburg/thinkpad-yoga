@@ -3,7 +3,7 @@
 # Since opening and closing tabletmode is signaled by the same ACPI event, the script toggles parameters.
 
 export XAUTHORITY=`ls -1 /home/*/.Xauthority | head -n 1`
-export DISPLAY=":`ls -1 /tmp/.X11-unix/ | sed -e s/^X//g | head -n 1`"
+export DISPLAY=":0"
 SCRIPTS=/home/bas/git/bas-rustenburg/thinkpad-yoga/scripts
 TABUSER=\#1000
 
