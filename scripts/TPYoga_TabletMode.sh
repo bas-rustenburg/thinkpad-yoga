@@ -11,7 +11,7 @@ touchpad=$(xinput list-props "SynPS/2 Synaptics TouchPad" | grep "Device Enabled
 if [ $touchpad -eq 1 ]; then
 	${SCRIPTS}/TPYoga_Rotate.sh up
 	xinput --set-prop "SynPS/2 Synaptics TouchPad" "Device Enabled" 0
-	sudo -u ${TABUSER} onboard
+	onboard
 else
 	${SCRIPTS}/TPYoga_Rotate.sh down
 	xinput --set-prop "SynPS/2 Synaptics TouchPad" "Device Enabled" 1
