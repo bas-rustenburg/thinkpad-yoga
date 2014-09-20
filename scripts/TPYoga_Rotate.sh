@@ -1,16 +1,18 @@
 #!/usr/bin/env bash
 
 # Script rotates screen 90deg on every run, and also rotates touchscreen and wacom input.
-# If argument normal|left|right|inverted is given, go directly into that orientation
+# Input corresponds to the arrow key on the keyboard that faces the user
+# Recommended shortcuts : Set super - arrowkey  to the orientation desired
+
+# If argument down|left|right|up is given, go directly into that orientation
 # Original source: https://forum.manjaro.org/index.php?topic=9671
 
 # Minor modifications by Bas Rustenburg
 
 
 
-
 current_orientation(){
-    xrandr|grep " connected" |awk '{print $4}'
+    xrandr| awk ' / connected/ {print $5}'
 }
 rotate_left(){
     xrandr -o left
@@ -39,11 +41,11 @@ rotate_normal(){
 
 orientation=$(current_orientation)
 
-# if the orientation argument was given to this script, sets orientation variable 
+# if the orientation argument was given to this script, sets orientation variable
 # according to the way we want to rotate in next loop.
 
 if [ -n "$1" ]; then
-    if [ "$1" == "normal" ]; then
+    if [ "$1" == "down" ]; then
         orientation="right"
     fi
     if [ "$1" == "left" ]; then
@@ -52,7 +54,7 @@ if [ -n "$1" ]; then
     if [ "$1" == "right" ]; then
         orientation="inverted"
     fi
-    if [ "$1" == "inverted" ]; then
+    if [ "$1" == "up" ]; then
         orientation="left"
     fi
 fi
