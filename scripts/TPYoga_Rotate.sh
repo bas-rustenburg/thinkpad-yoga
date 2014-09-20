@@ -48,10 +48,10 @@ if [ -n "$1" ]; then
     if [ "$1" == "down" ]; then
         orientation="right"
     fi
-    if [ "$1" == "left" ]; then
+    if [ "$1" == "right" ]; then
         orientation="(normal"
     fi
-    if [ "$1" == "right" ]; then
+    if [ "$1" == "left" ]; then
         orientation="inverted"
     fi
     if [ "$1" == "up" ]; then
