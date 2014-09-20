@@ -5,6 +5,7 @@ SCRIPTS=/home/bas/git/bas-rustenburg/thinkpad-yoga/scripts
 TABUSER=bas
 
 export XAUTHORITY=/home/${TABUSER}/.Xauthority
+export XDG_RUNTIME_DIR=/run/user/1000
 export DISPLAY=":0"
 
 touchpad=$(xinput list-props "SynPS/2 Synaptics TouchPad" | grep "Device Enabled" | awk -F ":" '{print $2}')
