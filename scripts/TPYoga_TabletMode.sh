@@ -5,7 +5,7 @@
 export XAUTHORITY=`ls -1 /home/*/.Xauthority | head -n 1`
 export DISPLAY=":`ls -1 /tmp/.X11-unix/ | sed -e s/^X//g | head -n 1`"
 SCRIPTS=/home/bas/git/bas-rustenburg/thinkpad-yoga/scripts
-TABUSER=bas
+TABUSER=\#1000
 
 touchpad=$(xinput list-props "SynPS/2 Synaptics TouchPad" | grep "Device Enabled" | awk -F ":" '{print $2}')
 if [ $touchpad -eq 1 ]; then
