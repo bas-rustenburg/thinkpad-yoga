@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # When converted to tablet, switch off touchpad, rotate screen and launch onboard
 # Since opening and closing tabletmode is signaled by the same ACPI event, the script toggles parameters.
-SCRIPTS=/home/bas/git/bas-rustenburg/thinkpad-yoga/scripts
+SCRIPTS=/home/bas/Git/bas-rustenburg/thinkpad-yoga/scripts
 TABUSER=bas
 
 export XAUTHORITY=/home/${TABUSER}/.Xauthority
