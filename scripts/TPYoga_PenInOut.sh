@@ -7,6 +7,7 @@ sleeptime="0.3s"
 lastPenPosition="Proximity=Out"
 while true
 do 
+    # Check proximity
     mssg="`xinput query-state "Wacom ISDv4 EC Pen stylus" | grep Proximity`"
     if [ ${#mssg} -gt 1 ]
     then
